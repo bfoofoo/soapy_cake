@@ -29,15 +29,17 @@ module SoapyCake
       request.time_converter = time_converter
 
       with_retries do
-        response = Response.new(response_body(request), request.short_response?, time_converter)
-        xml_response? ? response.to_xml : response.to_enum
-      rescue RequestFailed => e
-        raise RequestFailed.new(
-          e.message,
-          request_path: request.path,
-          request_body: request.xml,
-          response_body: e.response_body || response.body
-        )
+        begin
+          response = Response.new(response_body(request), request.short_response?, time_converter)
+          xml_response? ? response.to_xml : response.to_enum
+        rescue RequestFailed => e
+          raise RequestFailed.new(
+            e.message,
+            request_path: request.path,
+            request_body: request.xml,
+            response_body: e.response_body || response.body
+          )
+        end
       end
     end
 
@@ -68,9 +70,9 @@ module SoapyCake
     def log_curl_command(request)
       curl_headers = HEADERS.map { |k, v| "-H \"#{k}: #{v}\"" }.join(' ')
       curl_body = request.xml
-        .tr("\n", '')
-        .gsub(/>\s*</, '><')
-        .sub(request.api_key, '{{{ INSERT API KEY }}}')
+                    .tr("\n", '')
+                    .gsub(/>\s*</, '><')
+                    .sub(request.api_key, '{{{ INSERT API KEY }}}')
 
       logger&.info("curl --data '#{curl_body}' #{curl_headers} https://#{domain}/#{request.path}")
     end

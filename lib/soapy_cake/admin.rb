@@ -43,6 +43,18 @@ module SoapyCake
       run Request.new(:admin, :export, :creatives, opts)
     end
 
+    def buyers(opts = {})
+      run Request.new(:admin, :export, :buyers, opts)
+    end
+
+    def buyer_contracts(opts = {})
+      run Request.new(:admin, :export, :buyer_contracts, opts)
+    end
+
+    def schedules(opts = {})
+      run Request.new(:admin, :export, :schedules, opts)
+    end
+
     def campaign_summary(opts = {})
       run Request.new(:admin, :reports, :campaign_summary, opts)
     end

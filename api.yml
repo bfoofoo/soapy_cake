@@ -40,13 +40,13 @@ versions:
       affiliate_referrals: 1
       affiliates: 5
       blacklists: 1
-      buyer_contracts: 1
-      buyers: 1
+      buyer_contracts: 4
+      buyers: 2
       campaigns: 6
       creatives: 3
       offers: 5
       rules_targets: 3
-      schedules: 1
+      schedules: 2
     get:
       account_statuses: 1
       advertisers: 1

@@ -47,7 +47,7 @@ module SoapyCake
       run Request.new(:admin, :export, :buyers, opts)
     end
 
-    def buyer_contracts(opts = {})
+    def buyer_contracts
       run Request.new(:admin, :export, :buyer_contracts, opts)
     end
 

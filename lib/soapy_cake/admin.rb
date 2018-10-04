@@ -29,6 +29,10 @@ module SoapyCake
       run Request.new(:admin, :export, :affiliates, opts)
     end
 
+    def affiliate_referrals(opts = {})
+      run Request.new(:admin, :export, :affiliate_referrals, opts)
+    end
+
     def campaigns(opts = {})
       run Request.new(:admin, :export, :campaigns, opts)
     end

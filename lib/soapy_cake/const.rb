@@ -40,6 +40,33 @@ module SoapyCake
         aud: 4,
         cad: 5
       },
+      currencies: {
+        1 => {
+          symbol: '$',
+          name: 'US Dollar',
+          abbr: 'USD'
+        },
+        2 => {
+          symbol: '€',
+          name: 'Euro',
+          abbr: 'EUR'
+        },
+        3 => {
+          symbol: '£',
+          name: 'British Pound',
+          abbr: 'GBP'
+        },
+        4 => {
+          symbol: 'A$',
+          name: 'AU Dollar',
+          abbr: 'AUD'
+        },
+        5 => {
+          symbol: 'C$',
+          name: 'CA Dollar',
+          abbr: 'CAD'
+        }
+      },
       payment_setting_id: {
         system_default: 1,
         offer_currency: 2,

@@ -44,7 +44,7 @@ versions:
       buyers: 2
       campaigns: 8
       creatives: 3
-      offers: 5
+      offers: 6
       rules_targets: 3
       schedules: 2
     get:

@@ -42,7 +42,7 @@ versions:
       blacklists: 1
       buyer_contracts: 4
       buyers: 2
-      campaigns: 6
+      campaigns: 8
       creatives: 3
       offers: 5
       rules_targets: 3
